@@ -45,13 +45,13 @@ function HeaderNav({ cart }) {
           >
             <FontAwesomeIcon icon={faBars} className="me-3 text-2xl" />
           </button>
-          <Link to="/Homepage">
-  <img
-    src={logo}
-    className="h-10 md:h-14 object-contain"
-    alt="Logo"
-  />
-</Link>
+          <a href="./Homepage">
+            <img
+              src={logo}
+              className="h-10 md:h-14 object-contain"
+              alt="Logo"
+            />
+          </a>
         </div>
 
         <div className="hidden md:block">
