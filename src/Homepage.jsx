@@ -26,31 +26,31 @@ import {
 
     
       const [selectedShoe, setSelectedShoe] = useState(
-        "src/assets/pics1/nike-b.png"
+        "pics1/nike-b.png"
       );
       const [selectedShoe2, setSelectedShoe2] = useState(
-        "src/assets/pics1/nike1.png"
+        "pics1/nike1.png"
       );
       const [currentSlide, setCurrentSlide] = useState(0);
     
       const sliderpics = [
-        "src/assets/sliderpics/0208991.webp",
-        "src/assets/sliderpics/gomlek.jpg",
+        "sliderpics/0208991.webp",
+        "sliderpics/gomlek.jpg",
         "https://www.hangifirsat.com/wp-content/uploads/2023/10/skechers-bahar-kampanyasina-ozel-yuzde25-indirim-ayakkabi-dunyasinda.jpg",
         "https://img-network.mncdn.com/bannerimages/slider_2025041411073880930.jpg",
       ];
     
       const shoes = [
-        { src: "src/assets/pics1/nike-b.png", bg: "bg-blue-600" },
-        { src: "src/assets/pics1/nike-g.png", bg: "bg-green-600" },
-        { src: "src/assets/pics1/nike-s.png", bg: "bg-blue-300" },
-        { src: "src/assets/pics1/nike.png", bg: "bg-red-600" },
+        { src: "pics1/nike-b.png", bg: "bg-blue-600" },
+        { src: "pics1/nike-g.png", bg: "bg-green-600" },
+        { src: "pics1/nike-s.png", bg: "bg-blue-300" },
+        { src: "pics1/nike.png", bg: "bg-red-600" },
       ];
       const shoes2 = [
-        { src: "src/assets/pics1/nike1.png", bg: "bg-blue-600" },
-        { src: "src/assets/pics1/nike2.png", bg: "bg-green-600" },
-        { src: "src/assets/pics1/nike3.png", bg: "bg-blue-300" },
-        { src: "src/assets/pics1/nike4.png", bg: "bg-red-600" },
+        { src: "pics1/nike1.png", bg: "bg-blue-600" },
+        { src: "pics1/nike2.png", bg: "bg-green-600" },
+        { src: "pics1/nike3.png", bg: "bg-blue-300" },
+        { src: "pics1/nike4.png", bg: "bg-red-600" },
       ];
     
       const nextSlide = () => {
