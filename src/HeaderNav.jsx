@@ -151,13 +151,43 @@ function HeaderNav({ cart }) {
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>
-          <ul className="flex flex-col space-y-8 text-white font-medium">
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="#">Anasayfa</a></li>
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Manpage">Erkek Giyim</a></li>
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Womanpage">Kadın Giyim</a></li>
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Childpage">Çocuk Giyim</a></li>
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Shoepage">Ayakkabılar</a></li>
-            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Accessories">Aksesuarlar</a></li>
+          <ul className="flex flex-col space-y-4 text-white font-medium">
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="#">
+                <span className="text-2xl">🏠</span>
+                <span>Anasayfa</span>
+              </a>
+            </li>
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Manpage">
+                <span className="text-2xl">👔</span>
+                <span>Erkek Giyim</span>
+              </a>
+            </li>
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Womanpage">
+                <span className="text-2xl">👗</span>
+                <span>Kadın Giyim</span>
+              </a>
+            </li>
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Childpage">
+                <span className="text-2xl">🧸</span>
+                <span>Çocuk Giyim</span>
+              </a>
+            </li>
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Shoepage">
+                <span className="text-2xl">👟</span>
+                <span>Ayakkabılar</span>
+              </a>
+            </li>
+            <li>
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Accessories">
+                <span className="text-2xl">💎</span>
+                <span>Aksesuarlar</span>
+              </a>
+            </li>
           </ul>
           {userName ? (
             <div className="mt-10 text-white text-lg flex items-center gap-3 bg-gray-800 p-4 rounded-lg">
@@ -176,39 +206,52 @@ function HeaderNav({ cart }) {
         </div>
       )}
 
-      <nav className="hidden shadow-lg md:block w-full z-40 items-center bg-white">
-        <ul className="flex flex-wrap justify-center gap-8 lg:gap-20 pt-4 pb-2 font-medium">
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Homepage">
-              Anasayfa
-            </a>
-          </li>
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="/Manpage">
-              Erkek Giyim
-            </a>
-          </li>
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Womanpage">
-              Kadın Giyim
-            </a>
-          </li>
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Childpage">
-              Çocuk Giyim
-            </a>
-          </li>
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Shoepage">
-              Ayakkabılar
-            </a>
-          </li>
-          <li className="px-3 mb-2">
-            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Accessories">
-              Aksesuarlar
-            </a>
-          </li>
-        </ul>
+      <nav className="hidden md:block w-full z-40 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100">
+        <div className="max-w-7xl mx-auto px-6">
+          <ul className="flex justify-center items-center gap-2 lg:gap-4 py-3">
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="./Homepage">
+                <span className="relative z-10">🏠 Anasayfa</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+            <li className="h-8 w-px bg-gray-300"></li>
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="/Manpage">
+                <span className="relative z-10">👔 Erkek Giyim</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+            <li className="h-8 w-px bg-gray-300"></li>
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="./Womanpage">
+                <span className="relative z-10">👗 Kadın Giyim</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+            <li className="h-8 w-px bg-gray-300"></li>
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="./Childpage">
+                <span className="relative z-10">🧸 Çocuk Giyim</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+            <li className="h-8 w-px bg-gray-300"></li>
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="./Shoepage">
+                <span className="relative z-10">👟 Ayakkabılar</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+            <li className="h-8 w-px bg-gray-300"></li>
+            <li className="relative group">
+              <a className="flex items-center px-6 py-3 text-gray-700 font-semibold text-sm lg:text-base uppercase tracking-wide hover:text-blue-600 transition-all duration-300 relative overflow-hidden rounded-lg hover:bg-blue-50" href="./Accessories">
+                <span className="relative z-10">💎 Aksesuarlar</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left opacity-10"></div>
+              </a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   );
