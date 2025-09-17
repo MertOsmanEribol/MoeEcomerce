@@ -24,15 +24,14 @@ function Manpage() {
   }, [cart]);
 
   return (
-    <div className="flex flex-col min-h-screen">
-      <Headernav cart={cart} />
-      <div className="container mx-auto flex-grow px-4">
-        {/* Buraya sadece responsive için alt alta durma ayarı ekledim */}
-        <div className="flex flex-col space-y-4">
+    <div>
+      <div className="flex flex-col min-h-screen">
+        <Headernav cart={cart} />
+        <div className="container mx-auto flex-grow">
           <Products cart={cart} setCart={setCart} products={products} />
         </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 }
