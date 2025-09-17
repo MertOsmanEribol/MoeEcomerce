@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faXmark, faUser } from "@fortawesome/free-solid-svg-icons";
 import logo from "./assets/moe2.png";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import Cart from "./components/Cart"; // Cart bileşenini import ediyoruz
+import Cart from "./components/Cart";
 
 function HeaderNav({ cart }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,33 +37,33 @@ function HeaderNav({ cart }) {
 
   return (
     <div>
-      <header className="w-full shadow-s  shadow-black flex pb-3 pt-3 border-b-2 border-white justify-between md:justify-around items-center bg-black relative px-4 md:px-0">
+      <header className="w-full shadow-lg bg-gradient-to-r from-gray-900 via-black to-gray-900 flex pb-4 pt-4 border-b border-gray-700 justify-between md:justify-around items-center relative px-6 md:px-8">
         <div className="flex items-center">
           <button
-            className="text-white text-2xl mr-4 md:hidden"
+            className="text-white text-2xl mr-4 md:hidden hover:text-blue-400 transition-colors duration-300"
             onClick={toggleMobileMenu}
           >
             <FontAwesomeIcon icon={faBars} className="me-3 text-2xl" />
           </button>
-          <a href="./Homepage">
+          <a href="./Homepage" className="hover:scale-105 transition-transform duration-300">
             <img
               src={logo}
-              className="h-10 md:h-14 object-contain"
+              className="h-12 md:h-16 object-contain drop-shadow-lg"
               alt="Logo"
             />
           </a>
         </div>
 
         <div className="hidden md:block">
-          <div className="flex rounded-md border-blue-500 overflow-hidden max-w-md">
+          <div className="flex rounded-xl border-2 border-gray-600 overflow-hidden max-w-md shadow-lg bg-white hover:border-blue-400 transition-colors duration-300">
             <input
               type="text"
               placeholder="Aradığınız ürün..."
-              className="w-full outline-none bg-white text-gray-600 text-sm px-5 py-2.5"
+              className="w-full outline-none bg-white text-gray-700 text-sm px-6 py-3 placeholder-gray-400"
             />
             <button
               type="button"
-              className="flex items-center justify-center bg-[#007bff] px-3"
+              className="flex items-center justify-center bg-gradient-to-r from-blue-500 to-blue-600 px-4 hover:from-blue-600 hover:to-blue-700 transition-all duration-300"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,64 +77,66 @@ function HeaderNav({ cart }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button
-            className="md:hidden text-white text-xl mr-4"
+            className="md:hidden text-white text-xl mr-4 hover:text-blue-400 transition-colors duration-300"
             onClick={toggleSearch}
           >
-           
             <FontAwesomeIcon icon={faSearch} />
           </button>
-          <div className="hidden md:flex items-center gap-4 lg:gap-8">
+          <div className="hidden md:flex items-center gap-6 lg:gap-8">
             <div className="">
               {userName ? (
-                <a href="./Profile"> 
-                <div className="flex flex-col items-center gap-2 text-white">
-                  <FontAwesomeIcon icon={faUser} className="text-white text-2xl rounded-2xl" />
-                  <span className="text-sm md:text-base font-semibold">{userName}</span>
+                <a href="./Profile" className="group"> 
+                <div className="flex flex-col items-center gap-2 text-white hover:text-blue-400 transition-all duration-300 group-hover:scale-105">
+                  <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-2 rounded-full">
+                    <FontAwesomeIcon icon={faUser} className="text-white text-xl" />
+                  </div>
+                  <span className="text-sm md:text-base font-medium">{userName}</span>
                 </div>
                 </a>
                
               ) : (
                 <a href="./Login">
-                  <button className="border-2 bg-white hover:bg-blue-600 hover:border-blue-500 hover:text-white cursor-pointer rounded p-1.5 md:p-2.5 text-sm md:text-base">
+                  <button className="border-2 border-white bg-transparent text-white hover:bg-white hover:text-black cursor-pointer rounded-lg px-4 py-2 text-sm md:text-base font-medium transition-all duration-300 hover:scale-105 hover:shadow-lg">
                     Giriş Yap
                   </button>
                 </a>
               )}
             </div>
           </div>
-          <div className="relative cursor-pointer">
-            <div onClick={toggleCart}>
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                className="text-white text-xl md:text-2xl"
-              />
+          <div className="relative cursor-pointer group">
+            <div onClick={toggleCart} className="relative">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-all duration-300 group-hover:scale-110">
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  className="text-white text-lg md:text-xl"
+                />
+              </div>
               {cart.length > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-6 h-6 flex items-center justify-center font-bold animate-pulse">
                   {cart.length}
                 </span>
               )}
             </div>
             
-            {/* Sepet açıkken Cart bileşenini göster */}
             {cartOpen && <Cart cart={cart} emptyCart={emptyCart} />}
           </div>
         </div>
       </header>
 
       {searchOpen && (
-        <div className="md:hidden w-full bg-white p-4 absolute z-50 shadow-md">
+        <div className="md:hidden w-full bg-white p-4 absolute z-50 shadow-xl border-t-2 border-blue-400">
           <div className="flex items-center">
             <input
               type="text"
               placeholder="Aradığınız ürün..."
-              className="w-full outline-none bg-white text-gray-600 border border-gray-300 rounded-l-md text-sm px-4 py-2"
+              className="w-full outline-none bg-gray-50 text-gray-700 border-2 border-gray-200 rounded-l-lg text-sm px-4 py-3 focus:border-blue-400 transition-colors duration-300"
             />
-            <button className="bg-[#007bff] text-white px-3 py-2 rounded-r-md">
+            <button className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-4 py-3 rounded-r-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-300">
               <FontAwesomeIcon icon={faSearch} />
             </button>
-            <button className="ml-3 text-gray-700" onClick={toggleSearch}>
+            <button className="ml-3 text-gray-600 hover:text-red-500 transition-colors duration-300" onClick={toggleSearch}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>
@@ -142,30 +144,31 @@ function HeaderNav({ cart }) {
       )}
 
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 z-50 flex flex-col p-6">
-          <div className="flex justify-between items-center mb-8">
-            <img src={logo} className="h-10 object-contain" alt="Logo" />
-            <button className="text-white text-2xl" onClick={toggleMobileMenu}>
+        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-50 flex flex-col p-6 backdrop-blur-sm">
+          <div className="flex justify-between items-center mb-10">
+            <img src={logo} className="h-12 object-contain" alt="Logo" />
+            <button className="text-white text-3xl hover:text-red-400 transition-colors duration-300" onClick={toggleMobileMenu}>
               <FontAwesomeIcon icon={faXmark} />
             </button>
           </div>
-          <ul className="flex flex-col space-y-6 text-white font-medium">
-            <li><a className="text-xl" href="#">Anasayfa</a></li>
-            <li><a className="text-xl" href="./Manpage">Erkek Giyim</a></li>
-            <li><a className="text-xl" href="./Womanpage">Kadın Giyim</a></li>
-            <li><a className="text-xl" href="./Childpage">Çocuk Giyim</a></li>
-            <li><a className="text-xl" href="./Shoepage">Ayakkabılar</a></li>
-            <li><a className="text-xl" href="./Accessories">Aksesuarlar</a></li>
-           
+          <ul className="flex flex-col space-y-8 text-white font-medium">
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="#">Anasayfa</a></li>
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Manpage">Erkek Giyim</a></li>
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Womanpage">Kadın Giyim</a></li>
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Childpage">Çocuk Giyim</a></li>
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Shoepage">Ayakkabılar</a></li>
+            <li><a className="text-xl hover:text-blue-400 transition-colors duration-300 flex items-center py-2" href="./Accessories">Aksesuarlar</a></li>
           </ul>
           {userName ? (
-            <div className="mt-8 text-white text-lg flex items-center gap-2">
-              <FontAwesomeIcon icon={faUser} />
+            <div className="mt-10 text-white text-lg flex items-center gap-3 bg-gray-800 p-4 rounded-lg">
+              <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-2 rounded-full">
+                <FontAwesomeIcon icon={faUser} />
+              </div>
               <span>{userName}</span>
             </div>
           ) : (
             <a href="./Login">
-              <button className="mt-8 w-full border-2 bg-white text-black hover:bg-blue-600 hover:text-white hover:border-blue-500 cursor-pointer rounded-md p-2.5">
+              <button className="mt-10 w-full border-2 border-white bg-transparent text-white hover:bg-white hover:text-black cursor-pointer rounded-lg p-3 font-medium transition-all duration-300 hover:scale-105">
                 Giriş Yap
               </button>
             </a>
@@ -173,39 +176,38 @@ function HeaderNav({ cart }) {
         </div>
       )}
 
-      <nav className="hidden shadow-gray-300 shadow-md  md:block w-full z-40 items-center">
-        <ul className="flex flex-wrap justify-center gap-20 pt-3 font-medium">
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl  text-black border-indigo-500 :border-b-3" href="./Homepage">
+      <nav className="hidden shadow-lg md:block w-full z-40 items-center bg-white">
+        <ul className="flex flex-wrap justify-center gap-8 lg:gap-20 pt-4 pb-2 font-medium">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Homepage">
               Anasayfa
             </a>
           </li>
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl text-black border-indigo-500 focus:border-b-3" href="/Manpage">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="/Manpage">
               Erkek Giyim
             </a>
           </li>
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl text-black border-indigo-500 focus:border-b-3" href="./Womanpage">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Womanpage">
               Kadın Giyim
             </a>
           </li>
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl text-black border-indigo-500 focus:border-b-3" href="./Childpage">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Childpage">
               Çocuk Giyim
             </a>
           </li>
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl text-black border-indigo-500 focus:border-b-3" href="./Shoepage">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Shoepage">
               Ayakkabılar
             </a>
           </li>
-          <li className="px-2 mb-2">
-            <a className="hover:border-b-4 link text-base lg:text-xl text-black border-indigo-500 focus:border-b-3" href="./Accessories">
+          <li className="px-3 mb-2">
+            <a className="hover:border-b-4 border-blue-500 link text-base lg:text-xl text-gray-700 hover:text-blue-600 transition-all duration-300 py-2 block" href="./Accessories">
               Aksesuarlar
             </a>
           </li>
-        
         </ul>
       </nav>
     </div>
