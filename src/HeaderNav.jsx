@@ -144,7 +144,7 @@ function HeaderNav({ cart }) {
       )}
 
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-50 flex flex-col p-6 backdrop-blur-sm">
+        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-1 flex flex-col p-6 backdrop-blur-sm">
           <div className="flex justify-between items-center mb-10">
             <img src={logo} className="h-12 object-contain" alt="Logo" />
             <button className="text-white text-3xl hover:text-red-400 transition-colors duration-300" onClick={toggleMobileMenu}>
