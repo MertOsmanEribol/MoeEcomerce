@@ -37,7 +37,7 @@ function HeaderNav({ cart }) {
 
   return (
     <div>
-      <header className="w-full shadow-lg bg-gradient-to-r from-gray-900 via-black to-gray-900 flex pb-4 pt-4 border-b border-gray-700 justify-between md:justify-around items-center relative px-6 md:px-8">
+      <header className="w-full shadow-lg bg-gradient-to-r from-gray-900 via-black to-gray-900 flex pb-4 pt-4 border-b border-gray-700 justify-between md:justify-around items-center relative px-6 md:px-8 z-[9998]">
         <div className="flex items-center">
           <button
             className="text-white text-2xl mr-4 md:hidden hover:text-blue-400 transition-colors duration-300"
@@ -206,7 +206,7 @@ function HeaderNav({ cart }) {
         </div>
       )}
 
-      <nav className="hidden md:block w-full z-40 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100">
+      <nav className="hidden md:block w-full z-[9997] bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <ul className="flex justify-center items-center gap-2 lg:gap-4 py-3">
             <li className="relative group">
