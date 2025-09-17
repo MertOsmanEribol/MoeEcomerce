@@ -1,12 +1,53 @@
-# React + Vite
+# Moe E-commerce (İlk Prototip)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, **Moe E-commerce** adlı hobi proje sitesinin ilk prototipidir. Frontend React ve TailwindCSS ile geliştirilmiş olup, backend Node.js ve Express ile MSSQL veritabanından veri çekmektedir. Canlı siteyi inceleyebilirsiniz: [Moe E-commerce](https://moe-ecomerce.vercel.app/Homepage)
 
-Currently, two official plugins are available:
+## Teknolojiler
+- Frontend: React, TailwindCSS, Vite
+- Backend (API): Node.js, Express
+- Veritabanı: MSSQL (Google Cloud üzerinde)
+- Hosting: Frontend → Vercel, Backend & Database → Google Cloud
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Özellikler
+- Responsive tasarım (mobil uyumlu)
+- REST API ile ürün verilerinin backend’den çekilmesi (Örnek endpoint: `GET /ManProducts` → MSSQL’den JSON veri döner)
+- Sepet yönetimi (localStorage desteği ile)
+- Dinamik ürün listesi
+- Bu proje ilk prototip niteliğindedir ve geliştirmeye açıktır
 
-## Expanding the ESLint configuration
+## Kurulum ve Çalıştırma
+1. Projeyi klonlayın:
+```bash
+git clone <proje-linki>
+cd <proje-dizini>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Gerekli paketleri yükleyin:
+
+npm install
+
+Geliştirme sunucusunu başlatın:
+
+npm run dev
+Not: Frontend Vercel, backend ve veritabanı Google Cloud üzerinde çalışmaktadır.
+
+Proje Yapısı
+/
+├─ src/
+│  ├─ components/       # React bileşenleri
+│  ├─ pages/            # Sayfa bileşenleri (Homepage, Manpage vs.)
+│  └─ App.jsx
+├─ server/              # Backend API (Express + MSSQL)
+└─ package.json
+
+İletişim
+
+Her türlü geri bildiriminiz için:
+
+LinkedIn: [ www.linkedin.com/in/merteribol ]
+
+E-mail: [ Mert Osman Eribol]
+
+Portoflio [ https://mertosmaneribol.github.io/Portfolio/ ]
+
+
+Geliştirici : Mert Osman Eribol
