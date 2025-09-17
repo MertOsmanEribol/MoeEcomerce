@@ -7,7 +7,6 @@ import axios from "axios";
 function Manpage() {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState(() => {
-    // İlk başta localStorage'dan oku
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
@@ -18,20 +17,23 @@ function Manpage() {
       .catch((err) => console.error("Ürünler yüklenemedi:", err));
   }, []);
 
-  // Sepet değişince her zaman localStorage'a kaydet
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
 
   return (
-    <div>
-      <div className="flex flex-col min-h-screen">
-        <Headernav cart={cart} />
-        <div className="container mx-auto flex-grow">
-          <Products cart={cart} setCart={setCart} products={products} />
+    <div className="flex flex-col min-h-screen">
+      <Headernav cart={cart} />
+      <main className="flex-grow w-full px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <Products 
+            cart={cart} 
+            setCart={setCart} 
+            products={products} 
+          />
         </div>
-        <Footer />
-      </div>
+      </main>
+      <Footer />
     </div>
   );
 }
