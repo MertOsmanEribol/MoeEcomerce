@@ -144,7 +144,7 @@ function HeaderNav({ cart }) {
       )}
 
       {mobileMenuOpen && (
-        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-1 flex flex-col p-6 backdrop-blur-sm">
+        <div className="md:hidden fixed top-0 left-0 w-full h-full bg-black bg-opacity-95 z-50 flex flex-col p-6 backdrop-blur-sm">
           <div className="flex justify-between items-center mb-10">
             <img src={logo} className="h-12 object-contain" alt="Logo" />
             <button className="text-white text-3xl hover:text-red-400 transition-colors duration-300" onClick={toggleMobileMenu}>
@@ -206,7 +206,7 @@ function HeaderNav({ cart }) {
         </div>
       )}
 
-      <nav className="hidden md:block w-full z-40 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100">
+      <nav className="hidden md:block w-full z-30 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100 relative">
         <div className="max-w-7xl mx-auto px-6">
           <ul className="flex justify-center items-center gap-2 lg:gap-4 py-3">
             <li className="relative group">
