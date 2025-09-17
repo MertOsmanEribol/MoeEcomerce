@@ -206,7 +206,7 @@ function HeaderNav({ cart }) {
         </div>
       )}
 
-      <nav className="hidden md:block w-full z-30 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100 relative">
+      <nav className="hidden md:block w-full z-40 bg-gradient-to-r from-slate-50 via-white to-slate-50 border-b-2 border-gray-100">
         <div className="max-w-7xl mx-auto px-6">
           <ul className="flex justify-center items-center gap-2 lg:gap-4 py-3">
             <li className="relative group">
