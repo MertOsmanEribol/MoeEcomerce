@@ -29,7 +29,7 @@ const Cart = ({ cart = [], emptyCart }) => {
   // Sepet boşsa boş sepet mesajı göster
   if (!cart || cart.length === 0) {
     return (
-      <div className="border w-full md:w-96 p-5 rounded-xl shadow-lg top-16 absolute right-1 z-1 bg-white">
+      <div className="border w-full md:w-96 p-5 rounded-xl shadow-lg top-16 absolute right-1 z-10 bg-white">
         <h2 className="text-2xl font-bold mb-5 text-center text-gray-800 border-b pb-3">Sepetim</h2>
         <div className="py-8 text-center text-gray-500">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
