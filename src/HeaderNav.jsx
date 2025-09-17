@@ -183,7 +183,7 @@ function HeaderNav({ cart }) {
               </a>
             </li>
             <li>
-              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4  hover:border-blue-400" href="./Accessories">
+              <a className="text-lg hover:text-blue-400 transition-all duration-300 flex items-center gap-4 py-3 px-4 rounded-lg hover:bg-gray-800 border-l-4 border-transparent hover:border-blue-400" href="./Accessories">
                 <span className="text-2xl">💎</span>
                 <span>Aksesuarlar</span>
               </a>
